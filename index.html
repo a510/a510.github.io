@@ -1,12 +1,17 @@
 <html>
 <head>
+    <style>
+        input {
+            font-family: 'Lucida Console';
+        }
+    </style>
     <script>
         window.onload = function () {
             document.querySelectorAll('[data-oct]').forEach(function (e) {
                 e.oninput = function () {
                     var val = e.value;
                     var intVal = parseInt(val);
-                    var bin = document.getElementById('binOct' + e.getAttribute('data-oct'));
+                    var bin = document.getElementById(e.getAttribute('data-oct'));
                     if (val === intVal.toString() && intVal >= 0 && intVal <= 255) {
                         var binValue = (intVal >>> 0).toString(2);
                         bin.value = "00000000".substring(0, 8 - binValue.length) + binValue;
@@ -26,33 +31,16 @@
                 IP Address
             </td>
             <td>
-                <input id="oct1" data-oct="1" type="text" />
+                <input data-oct="ip1" type="text" />
             </td>
             <td>
-                <input id="oct2" data-oct="2" type="text" />
+                <input data-oct="ip2" type="text" />
             </td>
             <td>
-                <input id="oct3" data-oct="3" type="text" />
+                <input data-oct="ip3" type="text" />
             </td>
             <td>
-                <input id="oct4" data-oct="4" type="text" />
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Binary
-            </td>
-            <td>
-                <input id="binOct1" data-binoct="1" type="text" />
-            </td>
-            <td>
-                <input id="binOct2" data-binoct="2" type="text" />
-            </td>
-            <td>
-                <input id="binOct3" data-binoct="3" type="text" />
-            </td>
-            <td>
-                <input id="binOct4" data-binoct="4" type="text" />
+                <input data-oct="ip4" type="text" />
             </td>
         </tr>
         <tr>
@@ -60,16 +48,50 @@
                 Subnet Mask
             </td>
             <td>
-                <input id="subnet1" data-subnet="1" type="text" />
-            </td>                  
-            <td>                   
-                <input id="subnet2" data-subnet="2" type="text" />
-            </td>                  
-            <td>                   
-                <input id="subnet3" data-subnet="3" type="text" />
-            </td>                  
-            <td>                   
-                <input id="subnet4" data-subnet="4" type="text" />
+                <input data-oct="sub1" type="text" />
+            </td>           
+            <td>            
+                <input data-oct="sub2" type="text" />
+            </td>           
+            <td>            
+                <input data-oct="sub3" type="text" />
+            </td>           
+            <td>            
+                <input data-oct="sub4" type="text" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                IP (Binary)
+            </td>
+            <td>
+                <input id="ip1" type="text" />
+            </td>
+            <td>
+                <input id="ip2" type="text" />
+            </td>
+            <td>
+                <input id="ip3" type="text" />
+            </td>
+            <td>
+                <input id="ip4" type="text" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Subnet Mask Binary
+            </td>
+            <td>
+                <input id="sub1" type="text" />
+            </td>                      
+            <td>                       
+                <input id="sub2" type="text" />
+            </td>                      
+            <td>                       
+                <input id="sub3" type="text" />
+            </td>                      
+            <td>                       
+                <input id="sub4" type="text" />
             </td>
         </tr>
     </table>
